@@ -9,16 +9,9 @@ services:
     environment:
       - VIRTUAL_HOST=test.laserr.net
     networks:
-      - nginx-proxy
-      - public
+      - bridge
     ports:
       - 4000:80
     volumes:
       - ./:/usr/share/nginx/html
 
-networks:
-  nginx-proxy:
-    external: true
-  public:
-    external:
-      name: public
